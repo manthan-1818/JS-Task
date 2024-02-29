@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>welcome admin</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="cdn.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/jsfiles/admin.js" defer></script>
+  </head>
+  <body onload="stopBack()">
+    <header>
+        <div class="container-fluid text-center pt-2">
+          <p class="d-inline-block bg-white text-black mx-auto px-4 py-2 rounded-pill shadow">Admin dashboard</p>
+          <button type="button" class="btn btn-dark logout float-end">
+            Log out
+          </button>
+        </div>         
+       </header>
+    <section>
+      <div>
+        <h2 class="header1 text-center" id="heading">Your Heading Text</h2>
+      </div>
+    </section>
+     <!-- table  -->
+    <section>
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Form</h5>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form name="myform">
+              <div class="form-group mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+              </div>
+              <div class="form-group mb-3">
+                <select class="form-select" id="role" name="role">
+                  <option value="" disabled selected>Select Role</option>
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-secondary py-2" id="submitBtn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+   
+  </body>
+</html>

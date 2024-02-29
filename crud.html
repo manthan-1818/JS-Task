@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crud</title>
+    <script src="cdn.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/jsfiles/login.js" defer></script>
+  </head>
+
+  <body onload="preventBack()">
+    <header></header>
+    <div class="container d-flex align-items-center justify-content-center">
+      <div
+        class="innerDiv shadow-sm py-4 px-4 my-5 bg-white rounded text-secondary-emphasis"
+      >
+        <h2 class="text-dark pb-3">
+          Login <i class="fa-solid fa-dumbbell float-end"></i>
+        </h2>
+        <form class="row g-3" style="height: 45vh" id="signIn">
+          <div class="col-md-12">
+            <input
+              type="email"
+              class="form-control rounded-0"
+              name="name"
+              id="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              type="password"
+              class="form-control rounded-0"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+            <div id="errormsg" class="text-danger"></div>
+          </div>
+          <div class=" $orange-400 col-12 ">
+            <button type="submit" class=" btn btn-info rounded-0" id="submit">
+              Login
+            </button>
+          </div>
+          <p>
+            <a class="form__link" href="signup.html" id="register"
+              >Don't have an account?
+              <span class="text-dark"> &nbspSignup</span>
+            </a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
