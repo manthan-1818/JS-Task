@@ -12,9 +12,7 @@ document.querySelector(".logout").addEventListener("click", () => {
 // Display user name
 const userName = localStorage.getItem("name");
 const heading = document.querySelector(".heading");
-heading.innerHTML = `Welcome ${userName}`;
-
-
+heading.innerHTML = `Heyaaa ${userName}`;
 
 function displayBlogs() {
   let tBlogBody = document.getElementById("blogTbody");

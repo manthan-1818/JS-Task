@@ -75,13 +75,14 @@ function updatedata(index) {
 
 // add blog
 function addblog() {
+  
   let blogForm = document.getElementById("blogform");
   let blog = JSON.parse(localStorage.getItem("blog")) || [];
-  let title = document.getElementById("title").valuel;
+  let title = document.getElementById("title").value;
   console.log(title);
   let blogobj = {
     title: document.getElementById("title").value,
-    discription: document.getElementById("discription").value,
+    discription: document.getElementById("description").value
   };
   console.log(blogobj);
   blog.push(blogobj);
@@ -92,7 +93,7 @@ function addblog() {
 }
 
 function displayBlogs() {
-  let tBlogBody = document.getElementById("blogTbody");
+  let tBlogBody = document.getElementById("tBlogBody");
   let blogdata = JSON.parse(localStorage.getItem("blog")) || [];
   let tablerows = "";
 

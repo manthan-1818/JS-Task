@@ -31,9 +31,28 @@ body{
 #submit {
   width: 100%;
 }
+
 /* #submit:hover {
   background-color: rgb(34, 156, 95);
 } */
+
+
+.custom-close {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.25rem;
+}
+
+.custom-close:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+
+
+
 #register,
 #anchor-back {
   text-decoration: none;
@@ -47,10 +66,7 @@ body{
 #back:hover {
   text-decoration: underline;
 }
-
-.logout {
-  background: none;
-}
+ 
 .header {
   background-color: #fb6542;
 }
@@ -65,13 +81,16 @@ body{
     text-transform: uppercase; 
   }
   
-.imgs {
+.img {
   height: auto;
   width: 95%;
 }
 
- .dp {
+ .pic {
   height: auto;
   width: 90%;
   padding: 9%;
+}
+.space{
+  --bs-gutter-x: 0;
 }
