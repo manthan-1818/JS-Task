@@ -65,13 +65,13 @@ body{
     text-transform: uppercase; 
   }
   
-/* .imgs {
+.imgs {
   height: auto;
   width: 95%;
-} */
+}
 
-/* .dp {
+ .dp {
   height: auto;
-  width: 100%;
-  padding: 5%;
-} */
+  width: 90%;
+  padding: 9%;
+}

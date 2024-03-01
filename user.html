@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <div class="container-fluid fs-2 text-white text-center pt-3 pb-0">
+      <div class="container-fluid fs-2 text-dark text-center pt-3 pb-0">
         <p class="d-inline-block">CRUD </p>
         <button type="button" class="btn btn-secondary logout float-end">
           Log out
@@ -18,21 +18,51 @@
       </div>
     </header>
     <section><h2 class="heading text-black bg-light text-center p-1" ></h2></section>
-    <section class="container mt-5">
-      <h2 class="text-center mb-4">Latest Blogs</h2>
-      <div class="row">
-        <!-- Blog Cards Go Here -->
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="blog-image1.jpg" class="card-img-top" alt="Blog Image 1">
-            <div class="card-body">
-              <h5 class="card-title">Blog Title 1</h5>
-              <p class="card-text">Short description of the blog content.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
+    <section>
+      <h2 class="heading text-white text-center"></h2>
+    </section>
+    <!-- blog section -->
+    <section id="secblog">
+      <div class="container-flex header text-light text-center fs-3 bg-danger">Blogs</div>
+      <div class="container-flex text-light">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="imgs\npa9.png" alt="desktopPic" class="dp" />
+          </div>
+          <div class="col-md-8 text-dark p-5">
+            <p>
+              Title: Reigniting family-centered faith:Reigniting family-centered faith isn’t a nostalgic nod to the past but a clarion call to reclaim what has always been the heartbeat of resilient. In the tumult of modernity, uncertainty, and wars, as societal structures shift and values evolve, one steadfast foundation remains often overlooked – the family. Families, these sanctuaries of love and learning,..
+          </div>
+          <hr />
+          <div class="col-md-4">
+            <img src="imgs\12.png" alt="task1" class="imgs" />
+            <p class="fw-bolder text-dark">
+              Family Champion Blog: The Vitality of Family-Centered Faith </p>
+          </div>
+          <div class="col-md-4">
+            <img src="imgs\13.png" alt="task2" class="imgs" />
+            <p class="fw-bolder text-dark">
+            Victorious Family: Family Discipleship Institute Empowers Future
+          </p>
+          </div>
+          <div class="col-md-4">
+            <img src="imgs\14.png" alt="task3" class="imgs" />
+            <p class="fw-bolder text-dark">
+            beigns at home: Nationwide Movement towards Reviving Families</p>
           </div>
         </div>
-        
+      </div>
+      <div class="container-fluid">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">*</th>
+              <th scope="col">Title</th>
+              <th scope="col">Discription</th>
+            </tr>
+          </thead>
+          <tbody id="blogTbody"></tbody>
+        </table>
       </div>
     </section>
   </body>
