@@ -8,8 +8,6 @@ document.getElementById("myForm").addEventListener("submit", (e) => {
       return false;
     } else {
       const success = document.querySelector("#successMessage");
-      // const success = alert("Successfully Registered!")
-
       const { name, email, role, password } = getFormValues();
       const encryptpassword = btoa(password);
       success.style.display = "block";
@@ -54,55 +52,6 @@ function isEmailExist() {
   }
 }
  // Function to validate form inputs
-// function validate() {
- 
-//   const { name, email, role, password, confirmPassword } =
-//     getFormValues();
-//   let valid = true;
-//   const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-
-//   if (name === "") {
-//     document.getElementById("sname").innerHTML = "input is not empty";
-//     valid = false;
-//   } else {
-//     document.getElementById("sname").innerHTML = "";
-//   }
-
-//   if (email === "") {
-//     document.getElementById("semail").innerHTML = "input is not empty";
-//     valid = false;
-//   } else if (!emailRegex.test(email)) {
-//     document.getElementById("semail").innerHTML = "incorrect email";
-//     valid = false;
-//   } else {
-//     document.getElementById("semail").innerHTML = "";
-//   }
-
-
-//   if (password.length < 8) {
-//     document.getElementById("spassword").innerHTML =
-//       "it should contain 8 characters";
-//     valid = false;
-//   } else if (password === "") {
-//     document.getElementById("spassword").innerHTML = "input is not empty";
-//     valid = false;
-//   } else {
-//     document.getElementById("spassword").innerHTML = "";
-//   }
-
-//   if (confirmPassword !== password) {
-//     document.getElementById("sConfirmPassword").innerHTML =
-//       "password does not match";
-//     valid = false;
-//   } else if (password === "") {
-//     document.getElementById("sConfirmPassword").innerHTML =
-//       "input is not empty";
-//     valid = false;
-//   } else {
-//     document.getElementById("sConfirmPassword").innerHTML = "";
-//   }
-//   return valid;
-// }
 function validate() {
   const { name, email, role, password, confirmPassword } = getFormValues();
   let valid = true;

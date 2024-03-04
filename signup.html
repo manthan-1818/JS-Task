@@ -16,14 +16,10 @@
     <script src="/jsfiles/signup.js" defer></script>
   </head>
   <body class="">
-    <header>
-    </header>
+    <header></header>
     <div class="container p-4" style="width: 45%; height: 100vh">
-      <!-- <span id="successMessage" class="text-success fw-bold" style="text-shadow: 1px 1px 1px white; display: none">Successfully Registered!</span> -->
-
       <form class="row g-3 shadow-sm p-4 bg-body rounded bg-light" id="myForm">
-        <h2 class="text-dark ">
-          SIGN UP</h2>
+        <h2 class="text-dark">SIGN UP</h2>
         <div class="col-md-12">
           <input
             type="text"
@@ -43,7 +39,7 @@
             placeholder="Enter your email"
           /><span id="semail" class="error text-danger"></span>
         </div>
-        <div class=" col-md-12" >
+        <div class="col-md-12">
           <select class="form-select" id="select-role" name="role">
             <option value="" disabled selected>Select Role</option>
             <option value="user">User</option>
@@ -68,19 +64,21 @@
             placeholder="Confirm password"
           /><span class="error text-danger" id="sConfirmPassword"></span>
         </div>
-        <span id="successMessage" class="text-success fw-bold" style="text-shadow: 1px 1px 1px white; display: none">Successfully Registered!</span>
+        <span
+          id="successMessage"
+          class="text-success fw-bold"
+          style="text-shadow: 1px 1px 1px white; display: none"
+          >Successfully Registered!</span
+        >
         <div class="col-8">
-          <button
-            type="submit"
-            class="btn btn-info rounded-0 mt-3"
-            id="submit"
-          >
+          <button type="submit" class="btn btn-info rounded-0 mt-3" id="submit">
             Submit
           </button>
         </div>
         <p>
-          <a class="form__link " href="crud.html" id="register"
-            >Already have an account? <span class="text-dark">&nbspLogin</span></a
+          <a class="form__link" href="crud.html" id="register"
+            >Already have an account?
+            <span class="text-dark">&nbspLogin</span></a
           >
         </p>
       </form>
