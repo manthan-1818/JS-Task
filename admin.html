@@ -14,19 +14,23 @@
   </head>
   <body onload="stopBack()">
     <header>
-        <div class="container-fluid text-center pt-2">
-          <p class="d-inline-block bg-white text-black mx-auto px-4 py-2 rounded-pill shadow">Admin dashboard</p>
-          <button type="button" class="btn btn-dark logout float-end">
-            Log out
-          </button>
-        </div>         
-       </header>
+      <div class="container-fluid text-center pt-2">
+        <p
+          class="d-inline-block bg-white text-black mx-auto px-4 py-2 rounded-pill shadow"
+        >
+          Admin dashboard
+        </p>
+        <button type="button" class="btn btn-dark logout float-end">
+          Log out
+        </button>
+      </div>
+    </header>
     <section>
       <div>
         <h2 class="header1 text-center" id="heading">Your Heading Text</h2>
       </div>
     </section>
-     <!-- table  -->
+    <!-- table  -->
     <section>
       <div class="container">
         <div class="table-responsive">
@@ -41,59 +45,50 @@
                 <th scope="col">Delete</th>
               </tr>
             </thead>
-            <tbody id="tbody">
-            </tbody>
+            <tbody id="tbody"></tbody>
           </table>
         </div>
       </div>
     </section>
-    <!-- <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Update Form</h5>
-            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form name="myform">
-              <div class="form-group mb-3">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-              </div>
-              <div class="form-group mb-3">
-                <label for="title">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-              </div>
-              <div class="form-group mb-3">
-                <label for="title">Role</label>
-                <select class="form-select" id="select-role" name="role">
-                  <option value="" disabled selected>Select Role</option>
-                  <option value="user">User</option>
-                  <option value="admin">Admin</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-secondary py-2" id="submitBtn">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <!-- update form -->
+    <div
+      class="modal fade"
+      id="updateModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header bg-primary text-white">
             <h5 class="modal-title" id="exampleModalLabel">Update Form</h5>
-            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <form name="myform">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                />
               </div>
               <div class="mb-3">
                 <label for="select-role" class="form-label">Role</label>
@@ -103,166 +98,226 @@
                   <option value="admin">Admin</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                Submit
+              </button>
             </form>
           </div>
         </div>
       </div>
     </div>
-    
-    
-     
-<!--  Blog section -->
-<section id="secblog">
-  <div class="container-flex header text-light text-center bg-danger fs-3">
-   Welcome to My Blogs
-  </div>
-  <div class="container-flex text-light">
-    <div class="row space">
-      <div class="col-md-4">
-        <img src="imgs\npa9.png" alt="pic" class="pic" />
-      </div>
-      <div class="col-md-8 text-dark p-5 ">
-        <p>
-          Title: Reigniting family-centered faith:Reigniting family-centered faith isn’t a nostalgic nod to the past but a clarion call to reclaim what has always been the heartbeat of resilient. In the tumult of modernity, uncertainty, and wars, as societal structures shift and values evolve, one steadfast foundation remains often overlooked – the family. Families, these sanctuaries of love and learning,..
-        </p>
-        <button
-      type="button"
-      class="d-flex justify-content-start  btn btn-success  addblogbtn p-2 rounded-2 border-secondary"
-      data-toggle="modal"
-      data-target="#blog"
-    >
-      Add Blog
-    </button>
-      </div>
-      <hr />
-    </div>
-  </div>
 
-  <section>
-    <div class="container">
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Title</th>
-              <th scope="col">Discription</th>
-              <th scope="col">Update</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody id="tBlogBody">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-</section>
-
-<div class="modal" tabindex="-1" role="dialog" id="blog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Blog Form</h5>
-        <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        
-      </div>
- <div class="modal-body">
-  <form name="blogform">
-    <div class="form-group mb-3">
-      <label for="title" class="form-label">Title</label>
-      <input
-        type="text"
-        class="form-control"
-        id="title"
-        placeholder="Enter Title"
-      />
-    </div>
-    <div class="form-group mb-3">
-      <label for="description" class="form-label">Description</label>
-      <input
-        type="text"
-        class="form-control"
-        id="description"
-        placeholder="Enter Description"
-      />
-    </div>
-    <div class="d-flex justify-content-between">
-      <!-- <button
-        type="button"
-        class="btn btn-secondary"
-        data-dismiss="modal"
-      >
-        Close
-      </button> -->
-      <button
-        type="submit"
-        class="btn btn-primary"
-        id="submitBlog"
-        onclick="addblog()"
-      >
-        Submit
-      </button>
-    </div>
-  </form>
-</div>
-
-
-<!-- update  -->
-<div class="modal" tabindex="-1" role="dialog" id="updateBlog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">update form</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="blogform">
-          <div class="form-group py-1">
-            <input
-              type="text"
-              class="form-control"
-              id="utitle"
-              placeholder="Enter Title"
-            />
+    <!-- confirmation delete -->
+    <div class="modal" tabindex="-1" id="deleteConfirmationModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
-          <div class="form-group py-1">
-            <input
-              type="text"
-              class="form-control"
-              id="udiscription"
-              placeholder="Enter Discription"
-            />
+          <div class="modal-body">
+            <p>Are you sure you want to delete this item?</p>
           </div>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-dismiss="modal"
-          >
-            Close
-          </button>
-          <button
-            type="submit"
-            class="btn btn-primary py-2"
-            id="updateBlogbtn"
-          >
-            Submit
-          </button>
-        </form>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="confirmDeleteButton"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-   
+
+    <!--  Blog section -->
+    <section id="secblog">
+      <div class="container-flex header text-light text-center bg-danger fs-3">
+        Welcome to My Blogs
+      </div>
+      <div class="container-flex text-light">
+        <div class="row space">
+          <div class="col-md-4">
+            <img src="imgs\npa9.png" alt="pic" class="pic" />
+          </div>
+          <div class="col-md-8 text-dark p-5">
+            <p>
+              Title: Reigniting family-centered faith:Reigniting family-centered
+              faith isn’t a nostalgic nod to the past but a clarion call to
+              reclaim what has always been the heartbeat of resilient. In the
+              tumult of modernity, uncertainty, and wars, as societal structures
+              shift and values evolve, one steadfast foundation remains often
+              overlooked – the family. Families, these sanctuaries of love and
+              learning,..
+            </p>
+            <button
+              type="button"
+              class="d-flex justify-content-start btn btn-success addblogbtn p-2 rounded-2 border-secondary"
+              data-toggle="modal"
+              data-target="#blog"
+            >
+              Add Blog
+            </button>
+          </div>
+          <hr />
+        </div>
+      </div>
+
+      <!-- table -->
+      <section>
+        <div class="container">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Discription</th>
+                  <th scope="col">Update</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="tBlogBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- blog form -->
+    <div class="modal" tabindex="-1" role="dialog" id="blog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Blog</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form name="blogForm">
+              <div class="form-group py-1">
+                <label for="email" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  placeholder="Enter Title"
+                />
+              </div>
+              <div class="form-group py-1">
+                <label for="email" class="form-label">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  placeholder="Enter Description"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary py-2"
+                id="submitBlog"
+                onclick="addBlog()"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- update form -->
+    <div class="modal" tabindex="-1" role="dialog" id="update-Blog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">update form</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="blogform">
+              <div class="form-group py-1">
+                <label for="email" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="updateTitle"
+                  placeholder="Enter Title"
+                />
+              </div>
+              <div class="form-group py-1">
+                <label for="email" class="form-label">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="updateDescription"
+                  placeholder="Enter Description"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary py-2"
+                id="updateBlogButton"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete blog -->
+    <div class="modal" tabindex="-1" id="deleteConfirmationModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this item?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="confirmDeleteButton"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

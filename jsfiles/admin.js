@@ -7,6 +7,7 @@ document.querySelector(".logout").addEventListener("click", () => {
     console.log("user click cancel");
   }
 });
+
 // Display user data
 const userName = localStorage.getItem("name");
 const heading = document.querySelector("#heading");
@@ -34,117 +35,127 @@ if (userdata.length > 0) {
   tbody.innerHTML = tablerows;
 }
 
- // Delete user data
+// Delete user data
 function deletedata(userEmail) {
-  let result = confirm("Are you sure you want to delete?");
-  if (result) {
+  $("#deleteConfirmationModal").modal("show");
+
+  $("#confirmDeleteButton").on("click", function () {
     var users = JSON.parse(localStorage.getItem("users"));
     var restUsers = users.filter(function (user) {
       return user.email !== userEmail;
     });
     localStorage.setItem("users", JSON.stringify(restUsers));
     location.reload();
-  } else {
-    console.log("user click cancel");
-  }
+  });
 }
 
 // update user data
 function updatedata(index) {
   var users = JSON.parse(localStorage.getItem("users"));
-  
+
   document.getElementById("name").value = users[index].name;
   document.getElementById("email").value = users[index].email;
   document.getElementById("select-role").value = users[index].role;
 
-  document.getElementById("submitBtn").addEventListener("click", () => {
-    let updatedName = document.getElementById("name").value;
-    let updatedEmail = document.getElementById("email").value;
-    let updatedRole = document.getElementById("select-role").value;
+  document
+    .getElementById("submitBtn")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
 
-    users[index].name = updatedName;
-    users[index].email = updatedEmail;
-    users[index].role = updatedRole;
+      let updatedName = document.getElementById("name").value.trim();
+      let updatedEmail = document.getElementById("email").value.trim();
+      let updatedRole = document.getElementById("select-role").value.trim();
 
-    localStorage.setItem("users", JSON.stringify(users));
-    location.reload();
-  });
+      // Check if any field is empty
+      if (updatedName === "" || updatedEmail === "" || updatedRole === "") {
+        alert("Please fill in all the details.");
+        return;
+      }
+
+      users[index].name = updatedName;
+      users[index].email = updatedEmail;
+      users[index].role = updatedRole;
+
+      localStorage.setItem("users", JSON.stringify(users));
+      location.reload();
+    });
 }
 
-
-
 // add blog
-function addblog() {
-  
-  let blogForm = document.getElementById("blogform");
+function addBlog() {
+  let blogForm = document.getElementById("blogForm");
   let blog = JSON.parse(localStorage.getItem("blog")) || [];
   let title = document.getElementById("title").value;
   console.log(title);
-  let blogobj = {
+  let blogObj = {
     title: document.getElementById("title").value,
-    discription: document.getElementById("description").value
+    discription: document.getElementById("description").value,
   };
-  console.log(blogobj);
-  blog.push(blogobj);
+  blog.push(blogObj);
   localStorage.setItem("blog", JSON.stringify(blog));
-
   blogForm.reset();
   displayBlogs();
 }
 
+// blog
 function displayBlogs() {
   let tBlogBody = document.getElementById("tBlogBody");
-  let blogdata = JSON.parse(localStorage.getItem("blog")) || [];
-  let tablerows = "";
+  let blogData = JSON.parse(localStorage.getItem("blog")) || [];
+  let tableRows = "";
 
-  if (blogdata.length > 0) {
-    for (let i = 0; i < blogdata.length; i++) {
-      tablerows += `
+  if (blogData.length > 0) {
+    for (let i = 0; i < blogData.length; i++) {
+      tableRows += `
         <tr> 
           <td>${i + 1}</td>
-          <td>${blogdata[i].title}</td>
-          <td>${blogdata[i].discription}</td>
+          <td>${blogData[i].title}</td>
+          <td>${blogData[i].discription}</td>
           <td>
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#updateBlog" onclick="updateblog(${i})">Update</button>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#update-Blog" onclick="updateBlog(${i})">Update</button>
           </td>
           <td>
             <button type="button" class="btn btn-danger" onclick="deleteBlog(${i})">Delete</button>
           </td>
         </tr>`;
     }
-    tBlogBody.innerHTML = tablerows;
+    tBlogBody.innerHTML = tableRows;
   }
 }
 
+// delete blog
 function deleteBlog(index) {
-  let result = confirm("are you sure you want to delete it?");
-  if (result) {
+  $("#deleteConfirmationModal").modal("show");
+
+  $("#confirmDeleteButton").on("click", function () {
     let blogdata = JSON.parse(localStorage.getItem("blog")) || [];
+
     blogdata.splice(index, 1);
-    localStorage.setItem("blog", JSON.stringify(blogdata));
-    location.reload();
-    displayBlogs();
-  } else {
-    console.log("clicked cancel");
-  }
-}
 
-function updateblog(index) {
-  let blogdata = JSON.parse(localStorage.getItem("blog")) || [];
-  document.getElementById("utitle").value = blogdata[index].title;
-  document.getElementById("udiscription").value = blogdata[index].discription;
-
-  document.getElementById("updateBlogbtn").addEventListener("click", () => {
-    let title = document.getElementById("utitle").value;
-    let discription = document.getElementById("udiscription").value;
-    blogdata[index].title = title;
-    blogdata[index].discription = discription;
     localStorage.setItem("blog", JSON.stringify(blogdata));
+
     location.reload();
   });
 }
+
+// update blog
+function updateBlog(index) {
+  debugger;
+  let blogData = JSON.parse(localStorage.getItem("blog")) || [];
+  document.getElementById("updateTitle").value = blogData[index].title;
+  document.getElementById("updateDescription").value =
+    blogData[index].description;
+
+  document.getElementById("updateBlogButton").addEventListener("click", () => {
+    let title = document.getElementById("updateTitle").value;
+    let description = document.getElementById("updateDescription").value;
+    blogData[index].title = title;
+    blogData[index].discription = description;
+    localStorage.setItem("blog", JSON.stringify(blogData));
+    location.reload();
+  });
+}
+
 displayBlogs();
 function stopBack() {
   window.history.go(1);
 }
-

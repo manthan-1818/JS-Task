@@ -54,52 +54,100 @@ function isEmailExist() {
   }
 }
  // Function to validate form inputs
-function validate() {
+// function validate() {
  
-  const { name, email, role, password, confirmPassword } =
-    getFormValues();
+//   const { name, email, role, password, confirmPassword } =
+//     getFormValues();
+//   let valid = true;
+//   const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+//   if (name === "") {
+//     document.getElementById("sname").innerHTML = "input is not empty";
+//     valid = false;
+//   } else {
+//     document.getElementById("sname").innerHTML = "";
+//   }
+
+//   if (email === "") {
+//     document.getElementById("semail").innerHTML = "input is not empty";
+//     valid = false;
+//   } else if (!emailRegex.test(email)) {
+//     document.getElementById("semail").innerHTML = "incorrect email";
+//     valid = false;
+//   } else {
+//     document.getElementById("semail").innerHTML = "";
+//   }
+
+
+//   if (password.length < 8) {
+//     document.getElementById("spassword").innerHTML =
+//       "it should contain 8 characters";
+//     valid = false;
+//   } else if (password === "") {
+//     document.getElementById("spassword").innerHTML = "input is not empty";
+//     valid = false;
+//   } else {
+//     document.getElementById("spassword").innerHTML = "";
+//   }
+
+//   if (confirmPassword !== password) {
+//     document.getElementById("sConfirmPassword").innerHTML =
+//       "password does not match";
+//     valid = false;
+//   } else if (password === "") {
+//     document.getElementById("sConfirmPassword").innerHTML =
+//       "input is not empty";
+//     valid = false;
+//   } else {
+//     document.getElementById("sConfirmPassword").innerHTML = "";
+//   }
+//   return valid;
+// }
+function validate() {
+  const { name, email, role, password, confirmPassword } = getFormValues();
   let valid = true;
   const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  const specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
 
   if (name === "") {
-    document.getElementById("sname").innerHTML = "input is not empty";
+    document.getElementById("sname").innerHTML = "Input is not empty";
     valid = false;
   } else {
     document.getElementById("sname").innerHTML = "";
   }
 
   if (email === "") {
-    document.getElementById("semail").innerHTML = "input is not empty";
+    document.getElementById("semail").innerHTML = "Input is not empty";
     valid = false;
   } else if (!emailRegex.test(email)) {
-    document.getElementById("semail").innerHTML = "incorrect email";
+    document.getElementById("semail").innerHTML = "Incorrect email";
     valid = false;
   } else {
     document.getElementById("semail").innerHTML = "";
   }
 
-
   if (password.length < 8) {
-    document.getElementById("spassword").innerHTML =
-      "it should contain 8 characters";
+    document.getElementById("spassword").innerHTML = "It should contain 8 characters";
     valid = false;
   } else if (password === "") {
-    document.getElementById("spassword").innerHTML = "input is not empty";
+    document.getElementById("spassword").innerHTML = "Input is not empty";
+    valid = false;
+  } else if (!specialCharRegex.test(password)) {
+    document.getElementById("spassword").innerHTML = "Password must contain at least one special character";
     valid = false;
   } else {
     document.getElementById("spassword").innerHTML = "";
   }
 
   if (confirmPassword !== password) {
-    document.getElementById("sConfirmPassword").innerHTML =
-      "password does not match";
+    document.getElementById("sConfirmPassword").innerHTML = "Password does not match";
     valid = false;
   } else if (password === "") {
-    document.getElementById("sConfirmPassword").innerHTML =
-      "input is not empty";
+    document.getElementById("sConfirmPassword").innerHTML = "Input is not empty";
     valid = false;
   } else {
     document.getElementById("sConfirmPassword").innerHTML = "";
   }
+
   return valid;
 }
